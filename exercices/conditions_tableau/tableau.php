@@ -100,6 +100,7 @@ for( $i=0; $i<count($mois);$i++){
     echo $mois[$i]."<br>";
 }
 
+
 /** Exercice 8 bonus : Rechercher une valeur dans un tableau
  *   Objectif : Cherchez une valeur spécifique dans un tableau.
  *   Instructions :
@@ -113,6 +114,14 @@ if (in_array('54', $numero)) {
 } else {
     echo "Le 54 n 'esty pas dans le tableau.<br>";
 }
+
+// $rndm = [13254,536584,687,5869847,1,98796847];
+ 
+//     foreach ($rndm as $spe ) {
+//         if ($spe == 1) {
+//             echo "Found our NAMBA WAN!!!!!!!";
+//         }
+//     }
 
 /** Exercice 9 : Fusionner deux tableaux (Bonus)
  *   Objectif : Fusionnez deux tableaux en un seul.
@@ -129,4 +138,22 @@ for($i=0;$i<count($noms);$i++){
     $tip[]="$noms[$i] $prenoms[$i]";
 }
 print_r($tip);
+
+
+//creation d un tableau multidim
+
+    $names = ["Riri", "Fifi", "Loulou"];
+    $surname = ["Grigri", "Frifri", "Grougrou"];
+ 
+    $ducks = [];
+ 
+    for ($i = 0; $i < count($names); $i++) {
+        $ducks[] = [
+            "nom" => $names[$i],
+            "prenom" => $surname[$i]
+        ];
+    }
+ 
+    print_r($ducks);
+
 

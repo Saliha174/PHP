@@ -203,6 +203,7 @@
     // ); 
 
     echo '<pre>
+            <p> c\'est lui </p>
             <p>// création d\'un array multidimensionnel :</p>
             <p>$tab_multi = array(</p>
             <p>    0 => array(</p>
