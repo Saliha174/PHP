@@ -11,7 +11,7 @@
 <body class=<?php echo isset($_COOKIE["color"]) ? $_COOKIE["color"] :" " ;?>>
     <h1>Choisissez votre couleur de fond :</h1>
 
-    <form action="page2.php" method="POST">
+    <form action="" method="POST">
         <input type="radio" id="red" name="color" value="red">
         <label for="red">Rouge</label><br>
 
@@ -29,11 +29,30 @@
 
     <h2><a href="?delete=true">Réinitialiser la couleur</a></h2>
    <?php
+        error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+
+
+    
+if(isset($_POST["color"])){
+    $color=$_POST["color"];
+}elseif(isset($_COOKIE['color'])){
+    $color=$_COOKIE['color'];
+}else{
+    $color="";
+}
+
+
+
+    setcookie("color",$color,time()+3600);
+    
+  
    echo isset($_GET['delete']);
 
  if (isset($_GET['delete'])) {
         setcookie("color", "", time() - 3600);
         echo "<p>Le cookie a bien été supprimé !</p>";
+        header("location:index.php");
     }
  
    ?>
